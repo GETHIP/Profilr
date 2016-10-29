@@ -1,0 +1,78 @@
+<head>
+  <title>profilr</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Profilr</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class><a href="/">Home</a></li>
+            <li class><a href="/new">New Profile</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+</body>
+
+<template name="home">
+    <div class="container" id="homeContainer">
+      <h1>Hi.</h1>
+    </div>
+</template>
+
+<template name="profile">
+  <div class="container" id="profileContainer">
+    <center>
+      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle">
+      <h3 class="media-heading">{{profile.firstName}} {{profile.lastName}} <small>{{profile.age}}</small></h3>
+      <span><strong>Strengths: </strong></span>
+          <span class="label label-info">Analytical</span>
+          <span class="label label-info">Context</span>
+          <span class="label label-info">Relator</span>
+          <span class="label label-info">Competition</span>
+          <span class="label label-info">Relator</span>
+    </center>
+      <hr>
+      <center>
+      <p class="text-left"><strong>Bio: </strong><br>
+          {{profile.bio}}
+      </p>
+      <br>
+    </center>
+  </div>
+</template>
+
+<template name="new">
+  <div class="container" id="newContainer">
+      <form id="newProfile">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Smith">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" placeholder="18">
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <input type="text" class="form-control" id="bio" placeholder="I like Meteor.">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+  </div>
+</template>
